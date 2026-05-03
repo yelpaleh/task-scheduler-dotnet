@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|d:\\project\\dotnetproject\\fullcalendarmvcapp\\fullcalendarmvcapp\\wwwroot\\js\\calendar\\calendarmodule.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|solutionrelative:fullcalendarmvcapp\\wwwroot\\js\\calendar\\calendarmodule.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|d:\\project\\dotnetproject\\fullcalendarmvcapp\\fullcalendarmvcapp\\wwwroot\\js\\calendar\\ganttmodule.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|solutionrelative:fullcalendarmvcapp\\wwwroot\\js\\calendar\\ganttmodule.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|d:\\project\\dotnetproject\\fullcalendarmvcapp\\fullcalendarmvcapp\\views\\calendar\\calendar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|solutionrelative:fullcalendarmvcapp\\views\\calendar\\calendar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|d:\\project\\dotnetproject\\fullcalendarmvcapp\\fullcalendarmvcapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|solutionrelative:fullcalendarmvcapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|d:\\project\\dotnetproject\\fullcalendarmvcapp\\fullcalendarmvcapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{693D5B11-8654-DDBB-56C2-84359CD0BC1D}|FullCalendarMvcApp\\FullCalendarMvcApp.csproj|solutionrelative:fullcalendarmvcapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "calendar.cshtml",
+              "DocumentMoniker": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\Views\\Calendar\\calendar.cshtml",
+              "RelativeDocumentMoniker": "FullCalendarMvcApp\\Views\\Calendar\\calendar.cshtml",
+              "ToolTip": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\Views\\Calendar\\calendar.cshtml",
+              "RelativeToolTip": "FullCalendarMvcApp\\Views\\Calendar\\calendar.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T05:16:12.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GanttModule.js",
+              "DocumentMoniker": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\wwwroot\\js\\Calendar\\GanttModule.js",
+              "RelativeDocumentMoniker": "FullCalendarMvcApp\\wwwroot\\js\\Calendar\\GanttModule.js",
+              "ToolTip": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\wwwroot\\js\\Calendar\\GanttModule.js",
+              "RelativeToolTip": "FullCalendarMvcApp\\wwwroot\\js\\Calendar\\GanttModule.js",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAAAJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-02T05:13:57.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CalendarModule.js",
+              "DocumentMoniker": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\wwwroot\\js\\Calendar\\CalendarModule.js",
+              "RelativeDocumentMoniker": "FullCalendarMvcApp\\wwwroot\\js\\Calendar\\CalendarModule.js",
+              "ToolTip": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\wwwroot\\js\\Calendar\\CalendarModule.js",
+              "RelativeToolTip": "FullCalendarMvcApp\\wwwroot\\js\\Calendar\\CalendarModule.js",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-02T05:13:44.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FullCalendarMvcApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FullCalendarMvcApp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T17:41:00.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "FullCalendarMvcApp\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Project\\DotNetProject\\FullCalendarMvcApp\\FullCalendarMvcApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "FullCalendarMvcApp\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAYwI8AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T17:39:08.88Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
