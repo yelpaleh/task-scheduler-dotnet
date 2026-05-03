@@ -1,0 +1,127 @@
+@{
+    ViewData["Title"] = "Intervention Calendar";
+    ViewData["BodyClass"] = "calendar-page";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/custom-frappe-gantt.css" asp-append-version="true" />
+}
+
+<section class="planner-shell" aria-label="Intervention planner">
+    <div class="planner-heading">
+        <div>
+            <p class="eyebrow">Intervention planner</p>
+            <h1>Planned Interventions Calendar</h1>
+        </div>
+        <div class="calendar-metrics" aria-label="Planner summary">
+            <div>
+                <span id="visibleCount">0</span>
+                <small>Visible</small>
+            </div>
+            <div>
+                <span id="rangeCount">0</span>
+                <small>Days</small>
+            </div>
+        </div>
+    </div>
+
+    <form id="interventionFilters" class="filter-panel" data-interventions-url="@Url.Action("GetInterventions", "Home")">
+        <div class="filter-grid">
+            <div class="filter-field">
+                <label for="countyFilter">County</label>
+                <select id="countyFilter" name="county" class="form-select"></select>
+            </div>
+
+            <div class="filter-field">
+                <label for="controlGroupFilter">Control Group</label>
+                <select id="controlGroupFilter" name="controlGroup" class="form-select"></select>
+            </div>
+
+            <div class="filter-field">
+                <label for="sgiFilter">SGI</label>
+                <select id="sgiFilter" name="sgi" class="form-select">
+                    <option value="">All</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="filter-field">
+                <label for="assetTypeFilter">Asset Type</label>
+                <select id="assetTypeFilter" name="assetType" class="form-select"></select>
+            </div>
+
+            <div class="filter-field">
+                <label for="scheduledStartFilter">Start Date</label>
+                <input id="scheduledStartFilter" name="scheduledStart" type="date" class="form-control" />
+            </div>
+
+            <div class="filter-field">
+                <label for="scheduledEndFilter">End Date</label>
+                <input id="scheduledEndFilter" name="scheduledEnd" type="date" class="form-control" />
+            </div>
+
+            <div class="filter-actions filter-row-actions">
+                <button type="submit" class="btn btn-primary">Filter</button>
+                <button type="reset" class="btn btn-outline-primary">Reset Filter</button>
+            </div>
+
+            <div class="filter-field status-filter">
+                <label>Status</label>
+                <div class="status-checks" id="statusChecks" aria-label="Status filters">
+                    <label><input class="form-check-input" type="checkbox" id="statusAll" value="All" checked /> All</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Proposed" data-default="true" checked /> Proposed</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Scheduled" data-default="true" checked /> Scheduled</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Change Request" data-default="true" checked /> Change Request</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Confirmed" data-default="true" checked /> Confirmed</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Conflict Check" data-default="true" checked /> Conflict Check</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Awaiting New Dates" data-default="true" checked /> Awaiting New Dates</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Deferred" data-default="true" checked /> Deferred</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Started" data-default="true" checked /> Started</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Completed" /> Completed</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Cancelled" /> Cancelled</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Archive" /> Archive</label>
+                    <label><input class="form-check-input" type="checkbox" name="statuses" value="Draft" /> Draft</label>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <partial name="~/Views/Calendar/_FullCalendar.cshtml" />
+
+    <partial name="~/Views/Calendar/_GanttChart.cshtml" />
+</section>
+
+<div class="modal fade event-modal" id="eventModal" tabindex="-1" aria-labelledby="eventTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <span id="eventCategory" class="event-category"></span>
+                    <h5 id="eventTitle" class="modal-title"></h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <dl class="event-details">
+                    <div><dt>County</dt><dd id="eventCounty"></dd></div>
+                    <div><dt>Control group</dt><dd id="eventControlGroup"></dd></div>
+                    <div><dt>Asset type</dt><dd id="eventAssetType"></dd></div>
+                    <div><dt>Site</dt><dd id="eventSite"></dd></div>
+                    <div><dt>SGI</dt><dd id="eventSgi"></dd></div>
+                    <div><dt>Start</dt><dd id="eventStart"></dd></div>
+                    <div><dt>End</dt><dd id="eventEnd"></dd></div>
+                    <div><dt>Description</dt><dd id="eventDesc"></dd></div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <script src="~/js/Calendar/InterventionService.js" asp-append-version="true"></script>
+    <script src="~/js/Calendar/CalendarModule.js" asp-append-version="true"></script>
+    <script src="~/js/Calendar/GanttModule.js" asp-append-version="true"></script>
+    <script src="~/js/Calendar/CalendarMain.js" asp-append-version="true"></script>
+}

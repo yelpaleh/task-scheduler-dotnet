@@ -1,0 +1,21 @@
+<section class="planner-section gantt-section" aria-label="Filtered Gantt chart">
+    <button id="ganttToggle" class="gantt-toggle" type="button" aria-expanded="false" aria-controls="ganttPanel">
+        <span>Intervention Timeline</span>
+        <small>Click to show or hide the filtered timeline</small>
+    </button>
+    <div id="ganttPanel" class="gantt-panel" hidden>
+        <div class="gantt-toolbar">
+            <div>
+                <p class="eyebrow">Timeline</p>
+                <h2>Intervention Timeline</h2>
+            </div>
+            <div class="view-switch" aria-label="Gantt view mode">
+                <button type="button" class="active" data-gantt-view="day">Day</button>
+                <button type="button" data-gantt-view="week">Week</button>
+                <button type="button" data-gantt-view="month">Month</button>
+                <button type="button" data-gantt-view="year">Year</button>
+            </div>
+        </div>
+        <div id="ganttChart" class="gantt-chart" aria-live="polite"></div>
+    </div>
+</section>
