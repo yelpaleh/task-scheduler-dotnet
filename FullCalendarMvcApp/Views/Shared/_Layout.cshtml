@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - FullCalendarMvcApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/profile-menu.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FullCalendarMvcApp.styles.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
@@ -28,6 +29,7 @@
                         </li>
                     </ul>
                 </div>
+                <partial name="_ProfileMenu" />
             </div>
         </nav>
     </header>
@@ -45,6 +47,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/profile-menu.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

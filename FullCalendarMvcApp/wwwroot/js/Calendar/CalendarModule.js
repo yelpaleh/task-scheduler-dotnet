@@ -64,6 +64,7 @@ const getStatusClass = (status) => status.toString().toLowerCase().replaceAll(" 
             calendar = new FullCalendar.Calendar(calendarElement, {
                 themeSystem: "bootstrap5",
                 initialView: "timeGridWeek",
+                firstDay: 1,
                 height: "auto",
                 nowIndicator: true,
                 selectable: true,

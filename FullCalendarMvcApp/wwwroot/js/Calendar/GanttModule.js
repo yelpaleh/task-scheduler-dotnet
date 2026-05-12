@@ -176,10 +176,36 @@ const getStatusClass = (status) => status.toString().toLowerCase().replaceAll(" 
                 </div>`;
         }).join("");
 
+        const today = toDate(new Date());
+        const totalDays = differenceInDays(start, end) + 1;
+
+        let todayMarker = "";
+
+        if (today >= start && today <= end) {
+            const todayOffsetDays = differenceInDays(start, today);
+            const todayPercent = (todayOffsetDays / totalDays) * 100;
+
+            const todayLabel = today.toLocaleDateString(undefined, {
+                day: "2-digit"
+            });
+
+            todayMarker = `
+        <div class="gantt-today-marker" style="left:${todayPercent}%">
+            <div class="gantt-today-badge">${todayLabel}</div>
+            <div class="gantt-today-line"></div>
+        </div>
+    `;
+        }
+
         chart.innerHTML = `
             <div class="gantt-grid">
                 <div class="gantt-label-spacer"></div>
-                <div class="gantt-header" style="--gantt-columns:${columnCount}">${headerCells}</div>
+                <div class="gantt-header-wrapper">
+    <div class="gantt-header" style="--gantt-columns:${columnCount}">
+        ${headerCells}
+    </div>
+    ${todayMarker}
+</div>
                 ${rows}
             </div>`;
     };

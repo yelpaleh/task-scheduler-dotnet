@@ -676,3 +676,48 @@
     gap: 0.15rem;
   }
 }
+.gantt-header-wrapper {
+    position: relative;
+}
+
+.gantt-today-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 8;
+}
+
+.gantt-today-line {
+    position: absolute;
+    top: 42px;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #222;
+    transform: translateX(-50%);
+}
+
+.gantt-today-badge {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 34px;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gantt-header {
+    position: relative;
+    z-index: 2;
+}
