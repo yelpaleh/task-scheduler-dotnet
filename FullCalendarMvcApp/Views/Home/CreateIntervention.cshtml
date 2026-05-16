@@ -1,0 +1,128 @@
+@{
+    var mode = (ViewData["Mode"]?.ToString() ?? "create").ToLowerInvariant();
+    var interventionId = ViewData["InterventionId"]?.ToString() ?? string.Empty;
+    var isViewMode = mode == "view";
+    var pageTitle = mode == "edit" ? "Edit Intervention" : isViewMode ? "View Intervention" : "Create Intervention";
+    var submitText = mode == "edit" ? "Update Intervention" : "Submit Intervention";
+    ViewData["Title"] = pageTitle;
+    ViewData["BodyClass"] = "create-intervention-page";
+}
+
+<section class="page-shell create-form-shell" aria-labelledby="createInterventionTitle">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">@pageTitle</p>
+            <h1 id="createInterventionTitle">@(isViewMode ? "Intervention Details" : pageTitle)</h1>
+        </div>
+        <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Dashboard">Back to Dashboard</a>
+    </div>
+
+    <form class="intervention-form" data-create-intervention-form data-mode="@mode" data-intervention-id="@interventionId">
+        <section class="form-section">
+            <h2>Intervention details</h2>
+            <div class="form-grid">
+                <label class="form-field"><span>Intervention Title</span><input class="form-control" name="title" required /></label>
+                <label class="form-field"><span>Intervention ID</span><input class="form-control" name="interventionId" placeholder="Auto generated" /></label>
+                <label class="form-field"><span>Scheme Name</span><input class="form-control" name="schemeName" /></label>
+                <label class="form-field"><span>Intervention Type</span><select class="form-select" name="interventionType"><option>Maintenance</option><option>Inspection</option><option>Upgrade</option><option>Emergency</option></select></label>
+                <label class="form-field"><span>Priority</span><select class="form-select" name="priority"><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+                <label class="form-field"><span>Status</span><select class="form-select" name="status"><option>Draft</option><option>Proposed</option><option>Scheduled</option><option>Conflict Check</option></select></label>
+                <label class="form-field"><span>County</span><select class="form-select" name="county"><option>Leicestershire</option><option>Derbyshire</option><option>Warwickshire</option><option>Staffordshire</option><option>Gloucestershire</option></select></label>
+                <label class="form-field"><span>Control Group</span><input class="form-control" name="controlGroup" /></label>
+                <label class="form-field"><span>Asset Type</span><select class="form-select" name="assetType"><option>DBS</option><option>DSR</option><option>High Pressure</option><option>Low Pressure</option><option>Network Asset</option></select></label>
+                <label class="form-field"><span>Asset Reference</span><input class="form-control" name="assetReference" /></label>
+                <label class="form-field"><span>Site Name</span><input class="form-control" name="siteName" /></label>
+                <label class="form-field"><span>Site Location</span><input class="form-control" name="siteLocation" /></label>
+                <label class="form-field"><span>SGI Required</span><select class="form-select" name="sgiRequired"><option>Yes</option><option>No</option></select></label>
+                <label class="form-field"><span>Risk Level</span><select class="form-select" name="riskLevel"><option>Low</option><option>Medium</option><option>High</option></select></label>
+                <label class="form-field form-field--wide"><span>Description</span><textarea class="form-control" name="description" rows="4"></textarea></label>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Contact details</h2>
+            <div class="form-grid">
+                <label class="form-field"><span>Requester Name</span><input class="form-control" name="requesterName" /></label>
+                <label class="form-field"><span>Requester Email</span><input class="form-control" name="requesterEmail" type="email" /></label>
+                <label class="form-field"><span>Requester Phone</span><input class="form-control" name="requesterPhone" type="tel" /></label>
+                <label class="form-field"><span>Business Unit</span><input class="form-control" name="businessUnit" /></label>
+                <label class="form-field"><span>Contractor Name</span><input class="form-control" name="contractorName" /></label>
+                <label class="form-field"><span>Contractor Email</span><input class="form-control" name="contractorEmail" type="email" /></label>
+                <label class="form-field"><span>Emergency Contact</span><input class="form-control" name="emergencyContact" /></label>
+                <label class="form-field"><span>Emergency Phone</span><input class="form-control" name="emergencyPhone" type="tel" /></label>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Approver Inputs</h2>
+            <div class="form-grid">
+                <label class="form-field"><span>Approver Name</span><input class="form-control" name="approverName" /></label>
+                <label class="form-field"><span>Approver Email</span><input class="form-control" name="approverEmail" type="email" /></label>
+                <label class="form-field"><span>Approval Level</span><select class="form-select" name="approvalLevel"><option>Local</option><option>Regional</option><option>National</option></select></label>
+                <label class="form-field"><span>Approval Due Date</span><input class="form-control" name="approvalDueDate" type="date" /></label>
+                <label class="form-field"><span>Access Approval Required</span><select class="form-select" name="accessApproval"><option>Yes</option><option>No</option></select></label>
+                <label class="form-field"><span>Safety Approval Required</span><select class="form-select" name="safetyApproval"><option>Yes</option><option>No</option></select></label>
+                <label class="form-field form-field--wide"><span>Approver Notes</span><textarea class="form-control" name="approverNotes" rows="3"></textarea></label>
+                <fieldset class="field-group form-field--wide">
+                    <legend>Required Checks</legend>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="requiredChecks" value="RAMS" /> <span>RAMS</span></label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="requiredChecks" value="Permits" /> <span>Permits</span></label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="requiredChecks" value="Traffic Management" /> <span>Traffic Management</span></label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="requiredChecks" value="Customer Notice" /> <span>Customer Notice</span></label>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Scheduling details</h2>
+            <div class="form-grid">
+                <label class="form-field"><span>Requested Start Date</span><input class="form-control" name="requestedStartDate" type="date" /></label>
+                <label class="form-field"><span>Requested End Date</span><input class="form-control" name="requestedEndDate" type="date" /></label>
+                <label class="form-field"><span>Start Time</span><input class="form-control" name="startTime" type="time" /></label>
+                <label class="form-field"><span>End Time</span><input class="form-control" name="endTime" type="time" /></label>
+                <label class="form-field"><span>Outage Required</span><select class="form-select" name="outageRequired"><option>No</option><option>Yes</option></select></label>
+                <label class="form-field"><span>Outage Duration Hours</span><input class="form-control" name="outageHours" type="number" min="0" /></label>
+                <label class="form-field"><span>Customer Impact</span><select class="form-select" name="customerImpact"><option>None</option><option>Low</option><option>Medium</option><option>High</option></select></label>
+                <label class="form-field"><span>Traffic Management</span><select class="form-select" name="trafficManagement"><option>Not required</option><option>Stop/Go</option><option>Lane closure</option><option>Road closure</option></select></label>
+                <label class="form-field"><span>Weather Sensitive</span><select class="form-select" name="weatherSensitive"><option>No</option><option>Yes</option></select></label>
+                <label class="form-field"><span>Working Pattern</span><select class="form-select" name="workingPattern"><option>Day</option><option>Night</option><option>Weekend</option><option>24 Hour</option></select></label>
+                <label class="form-field form-field--wide"><span>Scheduling Constraints</span><textarea class="form-control" name="schedulingConstraints" rows="3"></textarea></label>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Documents</h2>
+            <div class="form-grid">
+                <label class="form-field"><span>Risk Assessment</span><input class="form-control" name="riskAssessment" type="file" /></label>
+                <label class="form-field"><span>Method Statement</span><input class="form-control" name="methodStatement" type="file" /></label>
+                <label class="form-field"><span>Permit Document</span><input class="form-control" name="permitDocument" type="file" /></label>
+                <label class="form-field"><span>Site Drawing</span><input class="form-control" name="siteDrawing" type="file" /></label>
+                <label class="form-field"><span>Supporting Evidence</span><input class="form-control" name="supportingEvidence" type="file" /></label>
+                <label class="form-field"><span>Document Reference</span><input class="form-control" name="documentReference" /></label>
+                <fieldset class="field-group form-field--wide">
+                    <legend>Declaration</legend>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="declarationAccurate" required /> <span>Information is accurate</span></label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="declarationReviewed" /> <span>Documents reviewed</span></label>
+                </fieldset>
+            </div>
+        </section>
+
+        <div class="sticky-submit">
+            <span data-create-message></span>
+            @if (isViewMode)
+            {
+                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditIntervention" asp-route-id="@interventionId">Edit Intervention</a>
+            }
+            else
+            {
+                <button type="submit" class="btn btn-primary">@submitText</button>
+            }
+        </div>
+    </form>
+
+    <button class="scroll-top" type="button" data-scroll-top aria-label="Scroll to top">&uarr;</button>
+</section>
+
+@section Scripts {
+    <script src="~/js/create-intervention.js" asp-append-version="true"></script>
+}

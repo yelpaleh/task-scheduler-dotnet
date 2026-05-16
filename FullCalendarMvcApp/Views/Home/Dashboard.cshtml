@@ -1,0 +1,125 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    ViewData["BodyClass"] = "dashboard-page";
+}
+
+<section class="page-shell" aria-labelledby="dashboardTitle">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">Dashboard</p>
+            <h1 id="dashboardTitle">Intervention Overview</h1>
+        </div>
+    </div>
+
+    <section class="overview-grid" aria-label="Intervention status overview">
+        <article class="overview-card"><span>Draft</span><strong>13</strong></article>
+        <article class="overview-card"><span>Proposed</span><strong>45</strong></article>
+        <article class="overview-card"><span>Scheduled</span><strong>19</strong></article>
+        <article class="overview-card"><span>Closed</span><strong>3</strong></article>
+        <article class="overview-card"><span>Cancelled</span><strong>4</strong></article>
+        <article class="overview-card"><span>Completed</span><strong>7</strong></article>
+        <article class="overview-card"><span>Conflict Check</span><strong>12</strong></article>
+        <article class="overview-card"><span>Await New Dates</span><strong>2</strong></article>
+        <article class="overview-card"><span>Started</span><strong>42</strong></article>
+        <article class="overview-card"><span>Change Request</span><strong>7</strong></article>
+        <article class="overview-card"><span>Confirmed</span><strong>23</strong></article>
+        <article class="overview-card"><span>Deferred</span><strong>5</strong></article>
+        <article class="overview-card"><span>Archive</span><strong>8</strong></article>
+    </section>
+
+    <section class="data-panel" aria-labelledby="interventionTableTitle">
+        <div class="panel-heading">
+            <div>
+                <h2 id="interventionTableTitle">Interventions</h2>
+                <p>Search, filter and review intervention records.</p>
+            </div>
+            <label class="role-picker">
+                <span>Role</span>
+                <select id="dashboardRole" class="form-select">
+                    <option value="Requester">Requester</option>
+                    <option value="Approver">Approver</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="table-filters">
+            <label class="form-field">
+                <span>Search by Intervention ID</span>
+                <input id="dashboardSearch" class="form-control" type="search" placeholder="e.g. INT-1008" />
+            </label>
+            <label class="form-field">
+                <span>Status</span>
+                <select id="dashboardStatus" class="form-select">
+                    <option value="">All Status</option>
+                </select>
+            </label>
+            <label class="form-field">
+                <span>County</span>
+                <select id="dashboardCounty" class="form-select">
+                    <option value="">All Counties</option>
+                </select>
+            </label>
+            <label class="form-field">
+                <span>Items per page</span>
+                <select id="dashboardPageSize" class="form-select">
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="table-wrap">
+            <table class="app-table">
+                <thead>
+                    <tr>
+                        <th class="actions-column">Action</th>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>County</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Control Group</th>
+                        <th>Site Name</th>
+                    </tr>
+                </thead>
+                <tbody id="dashboardTableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="pagination-bar">
+            <span id="dashboardPageSummary"></span>
+            <div class="pagination-actions">
+                <button id="dashboardPrev" type="button" class="btn btn-outline-primary btn-sm">Previous</button>
+                <span id="dashboardPageNumber"></span>
+                <button id="dashboardNext" type="button" class="btn btn-outline-primary btn-sm">Next</button>
+            </div>
+        </div>
+    </section>
+</section>
+
+<div class="modal fade" id="deleteInterventionModal" tabindex="-1" aria-labelledby="deleteInterventionTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content confirm-modal">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-kicker">Delete Intervention</span>
+                    <h5 class="modal-title" id="deleteInterventionTitle">Confirm delete</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-0">Are you sure you want to delete <strong id="deleteInterventionName"></strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteIntervention">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/dashboard.js" asp-append-version="true"></script>
+}

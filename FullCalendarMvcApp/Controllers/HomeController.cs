@@ -15,12 +15,45 @@ namespace FullCalendarMvcApp.Controllers
 
         public IActionResult Index()
         {
-            return Calendar();
+            return View("Dashboard");
+        }
+
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
+
+        public IActionResult PowerBI()
+        {
+            return View();
         }
 
         public IActionResult Calendar()
         {
             return View("~/Views/Calendar/calendar.cshtml");
+        }
+
+        public IActionResult CreateIntervention(string? mode = null, string? id = null)
+        {
+            ViewData["Mode"] = string.IsNullOrWhiteSpace(mode) ? "create" : mode.ToLowerInvariant();
+            ViewData["InterventionId"] = id ?? string.Empty;
+
+            return View();
+        }
+
+        public IActionResult ViewIntervention(string id)
+        {
+            return RedirectToAction(nameof(CreateIntervention), new { mode = "view", id });
+        }
+
+        public IActionResult EditIntervention(string id)
+        {
+            return RedirectToAction(nameof(CreateIntervention), new { mode = "edit", id });
+        }
+
+        public IActionResult Settings()
+        {
+            return View();
         }
 
         public IActionResult Privacy()

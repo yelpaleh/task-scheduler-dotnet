@@ -1,0 +1,47 @@
+<div class="modal fade draft-modal" id="draftInterventionModal" tabindex="-1" aria-labelledby="draftInterventionTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content" data-draft-form>
+            <div class="modal-header">
+                <div>
+                    <span class="modal-kicker">Draft Intervention</span>
+                    <h5 class="modal-title" id="draftInterventionTitle">Create draft intervention</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid form-grid--single">
+                    <fieldset class="field-group">
+                        <legend>Asset Type</legend>
+                        <label class="choice-card">
+                            <input class="form-check-input" type="radio" name="draftAssetType" value="Infra" checked />
+                            <span>Infra</span>
+                        </label>
+                        <label class="choice-card">
+                            <input class="form-check-input" type="radio" name="draftAssetType" value="Non-Infra" />
+                            <span>Non-Infra</span>
+                        </label>
+                    </fieldset>
+
+                    <label class="form-field">
+                        <span>Site Name</span>
+                        <input class="form-control" name="draftSiteName" type="text" required />
+                    </label>
+
+                    <label class="form-field">
+                        <span>Scheme Name</span>
+                        <input class="form-control" name="draftSchemeName" type="text" required />
+                    </label>
+
+                    <label class="form-field">
+                        <span>Intervention Description</span>
+                        <textarea class="form-control" name="draftDescription" rows="4" required></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Create Draft</button>
+            </div>
+        </form>
+    </div>
+</div>

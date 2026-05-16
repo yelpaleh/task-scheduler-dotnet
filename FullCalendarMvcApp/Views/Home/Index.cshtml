@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<section class="page-shell">
+    <div class="data-panel">
+        <h1>Dashboard</h1>
+        <p>Redirecting to dashboard...</p>
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Dashboard">Open Dashboard</a>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        window.location.replace('@Url.Action("Dashboard", "Home")');
+    </script>
+}
